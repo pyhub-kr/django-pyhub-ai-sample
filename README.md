@@ -8,3 +8,20 @@
 ## 실습 영상
 
 1. (유튜브 영상) [파이썬/장고로 30분 만에 데이터 분석 에이전트 챗봇 만들기](https://www.youtube.com/watch?v=10Fp78n3jSw)
+
+```
+# 가상환경 생성
+python -m venv venv
+
+# 가상환경 활성화
+venv\Scripts\activate  # windows
+source venv/bin/activate  # mac/linux
+
+# 패키지 설치
+python -m pip install -r requirements.txt
+
+# 개발서버 실행
+python manage.py runserver
+```
+
+[https://127.0.0.1:8000/example/chat/language-tutor/](https://127.0.0.1:8000/example/chat/language-tutor/) 접속하여, 챗봇 테스트
