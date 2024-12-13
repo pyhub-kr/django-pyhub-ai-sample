@@ -1,0 +1,9 @@
+django~=4.2.0
+
+channels
+daphne
+
+django-pyhub-ai
+
+django-environ
+
