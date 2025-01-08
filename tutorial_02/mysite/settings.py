@@ -124,3 +124,42 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 OPENAI_API_KEY = env.str("OPENAI_API_KEY")
+
+
+LOGGING = {
+    "version": 1,
+    "filters": {
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        }
+    },
+    # 커스텀 formatters를 정의
+    "formatters": {
+        "color": {
+            "()": "colorlog.ColoredFormatter",
+            "format": "%(log_color)s[%(asctime)s] %(message)s",
+            "log_colors": {
+                "DEBUG": "cyan",
+                "INFO": "green",
+                "WARNING": "yellow",
+                "ERROR": "red",
+                "CRITICAL": "bold_red",
+            }
+        },
+    },
+    "handlers": {
+        "debug_console": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            # 위에서 정의한 color 포맷터 지정
+            "formatter": "color",
+        },
+    },
+    "loggers": {
+        "django.db.backends": {
+            "handlers": ["debug_console"],
+            "level": "DEBUG",
+        },
+    },
+}

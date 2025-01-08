@@ -7,3 +7,5 @@ django-pyhub-ai
 
 django-environ
 
+colorlog
+django-lifecycle

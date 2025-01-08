@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import LLMChatRoom
 
-# Register your models here.
+@admin.register(LLMChatRoom)
+class LLMChatRoomAdmin(admin.ModelAdmin):
+    pass
